@@ -1,0 +1,14 @@
+$ git clone https://git.ti.com/git/arago-project/oe-layersetup.git tisdk
+$ cd tisdk
+$ ./oe-layertool-setup.sh -f configs/processor-sdk/<oeconfig-file>
+$ cd build
+$ . conf/setenv
+PARALLEL_MAKE="-j 1" BB_NUMBER_THREADS=8 MACHINE=am335x-evm bitbake -k tisdk-default-image
+
+
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+ulimit -n 4096
